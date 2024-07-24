@@ -54,7 +54,7 @@ const config: Config = {
     navbar: {
       title: 'MantisTable UI',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'MantisTable UI Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -73,26 +73,6 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'introduction',
-              to: '/docs/introduction',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/UNIMIBInside/mantistable',
-            },
-          ],
-        },
-      ],
       copyright: `Copyright © ${new Date().getFullYear()} DatAI lab. Built with Docusaurus.`,
     },
     prism: {
