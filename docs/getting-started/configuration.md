@@ -30,7 +30,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
     ├── drizzle.config.ts
     ├── example.env
     .
-```
+   ```
 
 2. **Edit the Configuration File**
 
@@ -43,20 +43,20 @@ This document describes the configuration file parameters for MantisTable UI. Th
    POSTGRES_PORT="your_postgres_port"
    POSTGRES_DB="your_postgres_db"
    POSTGRES_USER="your_postgres_user"
-   
-   STI_HOST="http://your.sti.host:port"
-   
+
    MONGO_INITDB_ROOT_USERNAME="your_mongo_username"
    MONGO_INITDB_ROOT_PASSWORD="your_mongo_password"
+   
+   STI_HOST="http://your.sti.host:port"
    
    PLUGINS_PORT="your_plugins_port"
    ```
 
 ## Configuration Parameters
 
-### Database Configuration
+### PostgreSQL
 
-- **DATABASE_URL**
+- **POSTGRESQL_URL**
 
   ```plaintext
   DATABASE_URL="postgresql://postgres:password@localhost:port/mantistableui"
@@ -104,21 +104,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
   The username for the PostgreSQL database.
 
-### External Service Configuration
-
-- **STI_HOST**
-
-  ```plaintext
-  STI_HOST="http://local:5042"
-  ```
-
-  Specifies the hostname, URL or IP address for an STI service. Replace this with the appropriate URL for your setup.
-
-  :::warning
-  The external Semantic Table Interpretation service must expose APIs as indicated in [sti-api](/docs/external-sti-services/sti-api.md)
-  :::
-
-### MongoDB Configuration
+### MongoDB
 
 - **MONGO_INITDB_ROOT_USERNAME**
 
@@ -131,65 +117,55 @@ This document describes the configuration file parameters for MantisTable UI. Th
 - **MONGO_INITDB_ROOT_PASSWORD**
 
   ```plaintext
-  MONGO_INITDB_ROOT_PASSWORD="export2024!"
+  MONGO_INITDB_ROOT_PASSWORD="password!"
   ```
 
   The root password for the MongoDB instance.
 
-### Plugins Configuration
+### External STI Services
+
+- **STI_HOST**
+
+  ```plaintext
+  STI_HOST="http://local:5042"
+  ```
+
+  Specifies the hostname, URL or IP address for an STI service. Replace this with the appropriate URL for your setup.
+
+  :::warning
+  The external Semantic Table Interpretation service must expose APIs as indicated in [sti-api](/docs/external-sti-services/sti-api.md) page.
+  :::
+
+### Plugins
 
 - **PLUGINS_PORT**
 
   ```plaintext
-  PLUGINS_PORT="5001"
+  PLUGINS_PORT="port"
   ```
 
   The port on which the plugins service will run.
-
-### Example Environment Variables
-
-You can also define custom environment variables for additional configuration. Below are examples of how to add custom variables:
-
-- **SERVERVAR**
-
-  ```plaintext
-  # SERVERVAR="foo"
-  ```
-
-  A placeholder for server-side variables. Uncomment and set a value if needed.
-
-- **NEXT_PUBLIC_CLIENTVAR**
-
-  ```plaintext
-  # NEXT_PUBLIC_CLIENTVAR="bar"
-  ```
-
-  A placeholder for client-side variables. Uncomment and set a value if needed.
 
 ## Configuration File Example
 
 Below is a complete example of a configuration file with all parameters:
 
 ```plaintext
-DATABASE_URL="postgresql://postgres:password@localhost:5432/mantistable"
-POSTGRESQL_PASS="table_ui2024!"
+DATABASE_URL="postgresql://postgres:password!@localhost:5432/mantistableui"
+POSTGRESQL_PASS="password!"
 POSTGRES_HOST="localhost"
 POSTGRES_PORT="5432"
-POSTGRES_DB="postgrestableui"
+POSTGRES_DB="mantistableui"
 POSTGRES_USER="postgres"
 
-STI_HOST="http://vm.chronos.disco.unimib.it:5042"
-
 MONGO_INITDB_ROOT_USERNAME="root"
-MONGO_INITDB_ROOT_PASSWORD="export2024!"
+MONGO_INITDB_ROOT_PASSWORD="password!"
+
+STI_HOST="http://unimib.it:5042"
 
 PLUGINS_PORT="5001"
-
-# Example:
-# SERVERVAR="foo"
-# NEXT_PUBLIC_CLIENTVAR="bar"
 ```
 
 ## Conclusion
 
-The configuration file for MantisTable UI is crucial for ensuring proper connections to databases and external services. By correctly setting these parameters, you ensure the smooth operation and integration of MantisTable UI within your environment. If you encounter any issues, refer to the [Troubleshooting](#troubleshooting) section in the main documentation or seek assistance from the community.
+The configuration file for MantisTable UI is **crucial** for ensuring proper connections to databases and external services. By correctly setting these parameters, you ensure the smooth operation and integration of MantisTable UI within your environment.
