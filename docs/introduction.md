@@ -12,4 +12,4 @@ With MantisTable UI, you can focus on what truly matters—advancing your work i
 
 This manual is designed to comprehensively walk through every aspect of setting up and using MantisTable UI, including every interface function and feature.
 
-This user manual starts with instructions for [installing or upgrading MantisTable UI on Windows, Mac, and Linux computers](getting-started/installation.md). It then walks you through [the interface and how to run MantisTable UI](getting-started/running.md) from a command line, with or without setting custom [preferences and modifications](getting-started/configuration.md).
+This user manual starts with instructions for [installing or upgrading MantisTable UI on Windows, Mac, and Linux computers](getting-started/installation.md). It then walks you through the interface and how to run MantisTable UI from a command line, with or without setting custom [preferences and modifications](getting-started/configuration.md).
