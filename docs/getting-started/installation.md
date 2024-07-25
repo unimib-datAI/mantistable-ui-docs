@@ -9,7 +9,7 @@ This page will guide you through the installation the application using Docker.
 ## Table of Contents
 
 1. [Prerequisites](#prerequisites)
-2. [Installation](#installation)
+2. [Installation](#installdocker)
     - [Using Docker](#using-docker)
     - [Using Docker Compose](#using-docker-compose)
 
@@ -21,7 +21,7 @@ Before you begin, ensure you have the following installed on your system:
 - [Docker Compose](https://docs.docker.com/compose/install/) (for Docker Compose installation)
 - A modern web browser (e.g., Chrome, Firefox, Edge)
 
-## Installation
+## Installation {#installdocker}
 
 ### Using Docker
 

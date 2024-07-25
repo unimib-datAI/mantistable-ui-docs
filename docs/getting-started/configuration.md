@@ -133,7 +133,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
   Specifies the hostname, URL or IP address for an STI service. Replace this with the appropriate URL for your setup.
 
   :::warning
-  The external Semantic Table Interpretation service must expose APIs as indicated in [External STI Services](/docs/external-sti-services) page.
+  The external Semantic Table Interpretation service must expose APIs as indicated in [External STI Approach](/docs/sti/external-sti-approach) page.
   :::
 
 ### Plugins
