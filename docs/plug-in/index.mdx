@@ -1,0 +1,47 @@
+# Plug-in
+
+MantisTable UI is designed with extensibility in mind, allowing users to enhance its capabilities through the use of plugins. There are three main types of plugins that can be integrated into MantisTable UI:
+
+1. **Export Plugins**
+2. **Add-on Plugins**
+3. **Transformation Plugins**
+
+## Plugin Types
+
+### 1. Export Plugins
+
+**Description:**  
+Export plugins enable MantisTable UI to export data and annotation in user-defined formats.
+
+**Use Cases:**
+- Exporting tables to custom file formats (e.g., JSON, XML, CSV)
+- Generating reports in PDF or other document formats
+- Custom serialization of table data for integration with other systems
+
+### 2. Add-on Plugins
+
+**Description:**  
+Add-on plugins use semantic annotations to process table data, providing additional functionalities such as lexicalization and visualization. These plugins enhance the interpretability and presentation of the data.
+
+**Use Cases:**
+- Visualizing table data in charts or graphs
+- Generating natural language descriptions of table content
+- Integrating with external semantic services for enriched data processing
+
+### 3. Transformation Plugins
+
+**Description:**  
+Transformation plugins perform various transformations on table data, such as data cleaning and data transformation. These plugins help in improving data quality and reshaping data to meet specific analysis needs.
+
+**Use Cases:**
+- Cleaning and normalizing data entries
+- Transforming table structures
+- Applying complex data transformations and computations
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+```
+
+We will assume that you have finished the guides, and know the basics like how to configure plugins, how to write React components, etc. These sections will have plugin authors and code contributors in mind, so we may occasionally refer to [plugin APIs](../api/plugin-methods/README.mdx) or other architecture details. Don't panic if you don't understand everything😉
