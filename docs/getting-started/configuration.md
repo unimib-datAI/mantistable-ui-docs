@@ -56,7 +56,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
 ### PostgreSQL
 
-- **POSTGRESQL_URL**
+- **`POSTGRESQL_URL`**
 
   ```plaintext
   DATABASE_URL="postgresql://postgres:password@localhost:port/mantistableui"
@@ -64,7 +64,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
   Specifies the URL for connecting to the PostgreSQL database.
 
-- **POSTGRESQL_PASS**
+- **`POSTGRESQL_PASS`**
 
   ```plaintext
   POSTGRESQL_PASS="password!"
@@ -72,7 +72,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
   The password for the PostgreSQL database user. This should match the password specified in the `DATABASE_URL`.
 
-- **POSTGRES_HOST**
+- **`POSTGRES_HOST`**
 
   ```plaintext
   POSTGRES_HOST="localhost"
@@ -80,7 +80,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
   The hostname or IP address of the PostgreSQL server.
 
-- **POSTGRES_PORT**
+- **`POSTGRES_POR`**
 
   ```plaintext
   POSTGRES_PORT="5432"
@@ -88,7 +88,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
   The port on which the PostgreSQL server is running.
 
-- **POSTGRES_DB**
+- **`POSTGRES_DB`**
 
   ```plaintext
   POSTGRES_DB="mantistableui"
@@ -96,7 +96,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
   The name of the PostgreSQL database to connect to.
 
-- **POSTGRES_USER**
+- **`POSTGRES_USER`**
 
   ```plaintext
   POSTGRES_USER="user"
@@ -106,7 +106,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
 ### MongoDB
 
-- **MONGO_INITDB_ROOT_USERNAME**
+- **`MONGO_INITDB_ROOT_USERNAME`**
 
   ```plaintext
   MONGO_INITDB_ROOT_USERNAME="root"
@@ -114,7 +114,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
   The root username for the MongoDB instance.
 
-- **MONGO_INITDB_ROOT_PASSWORD**
+- **`MONGO_INITDB_ROOT_PASSWORD`**
 
   ```plaintext
   MONGO_INITDB_ROOT_PASSWORD="password!"
@@ -124,7 +124,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
 ### External STI Services
 
-- **STI_HOST**
+- **`STI_HOST`**
 
   ```plaintext
   STI_HOST="http://local:5042"
@@ -133,12 +133,12 @@ This document describes the configuration file parameters for MantisTable UI. Th
   Specifies the hostname, URL or IP address for an STI service. Replace this with the appropriate URL for your setup.
 
   :::warning
-  The external Semantic Table Interpretation service must expose APIs as indicated in [sti-api](/docs/external-sti-services/sti-api.md) page.
+  The external Semantic Table Interpretation service must expose APIs as indicated in [External STI Services](/docs/external-sti-services) page.
   :::
 
 ### Plugins
 
-- **PLUGINS_PORT**
+- **`PLUGINS_PORT`**
 
   ```plaintext
   PLUGINS_PORT="port"

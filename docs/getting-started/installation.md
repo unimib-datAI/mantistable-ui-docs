@@ -73,7 +73,7 @@ Before you begin, ensure you have the following installed on your system:
    This command will start the MantisTable UI service in detached mode.
 
    :::warning
-   For a correct start of MantisTable UI it is necessary to modify the configuration file as indicated in [configuration](configuration.md) page.
+   For a correct start of MantisTable UI it is necessary to modify the configuration file as indicated in [Configuration](configuration.md) page.
    :::
 
 3. **Access the Application**
