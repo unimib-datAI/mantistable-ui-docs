@@ -15,7 +15,12 @@ module.exports = {
         sm: "0px",
         lg: "997px",
       },
-      colors: {},
+      colors: {
+        darkBackground: "#1B1B1D",
+        lightBackground: "#FFFFFF",
+        primaryGreen:"#1A6C36",
+        secondaryGreen:"#90BF31",
+      },
     },
   },
   plugins: [],
