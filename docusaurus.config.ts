@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import tailwindPlugin from './plugins/tailwind-config.cjs';
 
 const config: Config = {
   title: 'MantisTable UI',
@@ -90,6 +91,9 @@ const config: Config = {
       defaultMode: 'dark'
     },
   } satisfies Preset.ThemeConfig,
+
+  // Tailwind
+  plugins: [tailwindPlugin],
 };
 
 export default config;
