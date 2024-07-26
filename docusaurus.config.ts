@@ -1,7 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import tailwindPlugin from './plugins/tailwind-config.cjs';
+import tailwindPlugin from './plugins/tailwind-plugin.cjs';
 
 const config: Config = {
   title: 'MantisTable UI',
@@ -12,7 +12,7 @@ const config: Config = {
   url: 'https://unimibinside.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/mantistable-docs/',
+  baseUrl: '/mantistable-ui-docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -73,7 +73,7 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          href: 'https://github.com/UNIMIBInside/mantistable',
+          href: 'https://github.com/UNIMIBInside/mantistable-ui',
           label: 'GitHub',
           position: 'right',
         },

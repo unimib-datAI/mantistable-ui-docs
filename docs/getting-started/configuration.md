@@ -144,7 +144,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
   PLUGINS_PORT="port"
   ```
 
-  The port on which the plugins service will run.
+  The port on which the plugins service (Doker container) will run.
 
 ## Configuration File Example
 
