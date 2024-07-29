@@ -20,6 +20,8 @@ module.exports = {
         lightBackground: "#FFFFFF",
         primaryGreen:"#1A6C36",
         secondaryGreen:"#90BF31",
+        lgBackground: "#EDF0EC",
+        dgBackground: "#12210E",
       },
     },
   },

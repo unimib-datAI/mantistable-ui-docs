@@ -7,7 +7,7 @@ import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 
-import { Check } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 
 
 const features = [
@@ -27,6 +27,12 @@ const features = [
     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: Check,
   },
+
+  {
+    name: 'Feature 4',
+    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+    icon: Check,
+  },
 ]
 
 
@@ -37,6 +43,27 @@ export default function Home(): JSX.Element {
       title={`Hello from ${siteConfig.title}`}
       description="MantisTable UI was designed to let you tame your Semantic Table Interpretation approach.">
       <main>
+      <section className="bg-lgBackground dark:bg-dgBackground">
+        <div className="place-content-center mx-4 lg:gap-12 xl:gap-12 lg:pt-10 lg:grid-cols-12 pb-12">
+        <h1 className="md:text-center pt-12 mb-4 leading-none text-gray-900 sm:text-6xl md:text-7xl lg:text-8xl dark:text-white font-bold tracking-widest">MantisTable UI</h1>
+        <div className="justify-center flex flex-col md:flex-row max-w-6xl gap-20 pb-2 mx-auto">
+        <img
+            alt="Logo"
+            src="/mantistable-ui-docs/img/mantislogo.svg"
+            className="lg:mt-0 lg:col-span-4 lg:flex w-[20rem] object-fit-cover h-auto max-w-full"/>
+        <div className="place-content-center max-w-lg pl-2">
+        <p
+        className=" text-dgBackground dark:text-white sm:text-xl lg:mb-8 md:text-2xl lg:text-3xl"
+      > Effortless data interaction and simple table navigation with a Graphic User Interface for Semantic Table Interpretion </p>
+                <button className="text-center inline-flex items-center border-none dark:bg-primaryGreen dark:text-lightBackground text-dgBackground font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-secondaryGreen font-semibold"> 
+                Learn more <ArrowRight className="ml-2 h-5 w-5"/> </button>
+        </div>
+
+        </div>
+        </div>
+      </section>
+
+      
       <div className="overflow-hidden dark:bg-darkBackground bg-lightBackground py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
