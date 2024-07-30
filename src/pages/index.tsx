@@ -4,11 +4,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
-
 import styles from './index.module.css';
 
 import { Check, ArrowRight, SquarePen, SquareChartGantt, Blocks } from 'lucide-react'; 
-
 
 const features = [
   {
@@ -48,7 +46,7 @@ export default function Home(): JSX.Element {
         <p
         className=" text-dgBackground dark:text-white sm:text-xl lg:mb-8 md:text-2xl lg:text-3xl"
       > Effortless data interaction and simple table navigation with a Graphic User Interface for Semantic Table Interpretion </p>
-                <a href="mantistable-ui-docs/docs/introduction" className="text-center inline-flex items-center border-none dark:bg-primaryGreen dark:text-lightBackground text-dgBackground font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-secondaryGreen font-semibold"> 
+                <a href="/mantistable-ui-docs/docs/introduction" className="text-center inline-flex items-center border-none dark:bg-primaryGreen dark:text-lightBackground text-dgBackground font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-secondaryGreen font-semibold"> 
                 Learn more <ArrowRight className="ml-2 h-5 w-5"/> </a>
         </div>
 
