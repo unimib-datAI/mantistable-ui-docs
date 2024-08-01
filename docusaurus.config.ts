@@ -9,7 +9,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://unimibinside.github.io',
+  url: 'https://unimib-datai.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/mantistable-ui-docs/',
@@ -71,6 +71,11 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Documentation',
+        },
+        {
+          href: 'https://unimib-datai.github.io/sti-website/',
+          label: 'Our works',
+          position: 'right',
         },
         {
           href: 'https://github.com/UNIMIBInside/mantistable-ui',
