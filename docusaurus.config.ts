@@ -86,7 +86,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} DatAI lab. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Dat<sup>*</sup>AI lab lab. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
