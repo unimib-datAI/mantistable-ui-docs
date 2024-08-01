@@ -1,6 +1,6 @@
 <div align="center">
   <h1 align="center">
-    MammoTab UI Documentation
+    MantisTable UI Documentation
     <br />
     <br />
     <a href="https://unimib-datai.github.io/mantistable-ui-docs/">Documentation</a>
@@ -9,4 +9,4 @@
 
 ## License
 
-The MammoTab documentation (e.g., `.md` files in the `/docs` folder) is [Creative Commons licensed](./LICENSE).
+The MantisTable UI documentation (e.g., `.md` files in the `/docs` folder) is [Creative Commons licensed](./LICENSE).
