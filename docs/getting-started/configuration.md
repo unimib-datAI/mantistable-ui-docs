@@ -10,13 +10,13 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
 1. **Copy the Example File**
 
-   First, make a copy of the `example.env` file. This can be done using the following command in a terminal:
+   First, make a copy of the `.env.example.prod` file. This can be done using the following command in a terminal:
 
    ```sh
-   cp example.env .env
+   cp .env.example.prod .env
    ```
 
-   The `example.env` is located inside the main folder:
+   The `.env.example.prod` is located inside the main folder:
 
    ```bash
     mantistable-ui
@@ -28,7 +28,8 @@ This document describes the configuration file parameters for MantisTable UI. Th
     ├── components.json
     ├── docker-compose.yml
     ├── drizzle.config.ts
-    ├── example.env
+    ├── .env.example.dev
+    ├── .env.example.prod
     .
    ```
 
@@ -37,32 +38,37 @@ This document describes the configuration file parameters for MantisTable UI. Th
    Open the newly created `.env` file in a text editor of your choice. Modify the parameters as needed to fit your environment. Below is an example of how the file might look after customization:
 
    ```env
-   DATABASE_URL="postgresql://postgres:yourpassword@yourhost:5432/yourdatabase"
-   POSTGRESQL_PASS="your_postgres_password"
-   POSTGRES_HOST="your_postgres_host"
-   POSTGRES_PORT="your_postgres_port"
-   POSTGRES_DB="your_postgres_db"
-   POSTGRES_USER="your_postgres_user"
+   # PostgreSQL
+   POSTGRESQL_PASS="..."
+   POSTGRES_HOST="..."
+   POSTGRES_PORT="..."
+   POSTGRES_DB="..."
+   POSTGRES_USER="..."
 
-   MONGO_INITDB_ROOT_USERNAME="your_mongo_username"
-   MONGO_INITDB_ROOT_PASSWORD="your_mongo_password"
-   
-   STI_HOST="http://your.sti.host:port"
-   
-   PLUGINS_PORT="your_plugins_port"
+   # MongoDB
+   MONGO_INITDB_ROOT_USERNAME="..."
+   MONGO_INITDB_ROOT_PASSWORD="..."
+
+   # STI
+   STI_HOST_UPLOAD_AND_PROCESS="..."
+   STI_HOST_DOWNLOAD_ANNOTATIONS="..."
+
+   # Plugins
+   PLUGINS_HOST="..."
+   NEXT_PUBLIC_PLUGINS_HOST="..."
+   PLUGINS_PORT="..."
+
+   # Mantis
+   MANTIS_OUTSIDEPORT="..."
+
+   # Mantistablex Variables
+   GPT_KEY="..."
+   GPT_ENDPOINT="..."
    ```
 
 ## Configuration Parameters
 
 ### PostgreSQL
-
-- **`POSTGRESQL_URL`**
-
-  ```plaintext
-  DATABASE_URL="postgresql://postgres:password@localhost:port/mantistableui"
-  ```
-
-  Specifies the URL for connecting to the PostgreSQL database.
 
 - **`POSTGRESQL_PASS`**
 
@@ -70,7 +76,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
   POSTGRESQL_PASS="password!"
   ```
 
-  The password for the PostgreSQL database user. This should match the password specified in the `DATABASE_URL`.
+  The password for the PostgreSQL database.
 
 - **`POSTGRES_HOST`**
 
@@ -78,15 +84,15 @@ This document describes the configuration file parameters for MantisTable UI. Th
   POSTGRES_HOST="localhost"
   ```
 
-  The hostname or IP address of the PostgreSQL server.
+  The hostname or IP address of the PostgreSQL server. The service is available also inside the Docker Network, so it's possible to specify `postgres`, which is the name of the service.
 
-- **`POSTGRES_POR`**
+- **`POSTGRES_PORT`**
 
   ```plaintext
   POSTGRES_PORT="5432"
   ```
 
-  The port on which the PostgreSQL server is running.
+  The port on which the PostgreSQL server is running. `5432` is the default one.
 
 - **`POSTGRES_DB`**
 
@@ -124,13 +130,21 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
 ### External STI Services
 
-- **`STI_HOST`**
+- **`STI_HOST_UPLOAD_AND_PROCESS`**
 
   ```plaintext
-  STI_HOST="http://local:5042"
+  STI_HOST_UPLOAD_AND_PROCESS="http://sti_upload_and_process:5000"
   ```
 
-  Specifies the hostname, URL or IP address for an STI service. Replace this with the appropriate URL for your setup.
+  The address of the STI endpoint available to upload and process a single table. Replace this with the appropriate URL for your setup.
+
+  - **`STI_HOST_DOWNLOAD_ANNOTATIONS`**
+
+  ```plaintext
+  STI_HOST_DOWNLOAD_ANNOTATIONS="http://sti_download:5000"
+  ```
+
+  The address of the STI endpoint available to download the annotated table. Replace this with the appropriate URL for your setup.
 
   :::warning
   The external Semantic Table Interpretation service must expose APIs as indicated in [External STI Approach](/docs/sti/external-sti-approach) page.
@@ -138,32 +152,89 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
 ### Plugins
 
+- **`PLUGINS_HOST`**
+
+  ```plaintext
+  PLUGINS_HOST="http://api:5000"
+  ```
+
+  The address of the plugin service. The address specified here is internal in the docker network, such as `http://api:5000`, which specify the container name.
+
+- **`NEXT_PUBLIC_PLUGINS_HOST`**
+
+  ```plaintext
+  NEXT_PUBLIC_PLUGINS_HOST="http://localhost:5001"
+  ```
+
+  The address of the plugin service. The address specified here is external to the docker network, such as `http://localhost:5001`, because it is used in the frontend module.
+
 - **`PLUGINS_PORT`**
 
   ```plaintext
-  PLUGINS_PORT="port"
+  PLUGINS_PORT="5001"
   ```
 
   The port on which the plugins service (Doker container) will run.
+
+### MantisTable
+
+- **`MANTIS_OUTSIDEPORT`**
+
+  ```plaintext
+  MANTIS_OUTSIDEPORT="3000"
+  ```
+
+  The port on which the frontend platform service (Doker container) will run.
+
+### Mantistablex
+
+- **`GPT_KEY`**
+
+  ```plaintext
+  GPT_KEY="..."
+  ```
+
+  The private key from GPT APIs used to execute the mantistablex plugin.
+
+- **`GPT_ENDPOINT`**
+
+  ```plaintext
+  GPT_ENDPOINT="..."
+  ```
+
+  The endpoint from GPT APIs used to execute the mantistablex plugin.
 
 ## Configuration File Example
 
 Below is a complete example of a configuration file with all parameters:
 
 ```plaintext
-DATABASE_URL="postgresql://postgres:password!@localhost:5432/mantistableui"
-POSTGRESQL_PASS="password!"
-POSTGRES_HOST="localhost"
-POSTGRES_PORT="5432"
-POSTGRES_DB="mantistableui"
-POSTGRES_USER="postgres"
+   # PostgreSQL
+   POSTGRESQL_PASS="table_ui2024!"
+   POSTGRES_HOST="postgres"
+   POSTGRES_PORT="5432"
+   POSTGRES_DB="postgrestableui"
+   POSTGRES_USER="postgres"
 
-MONGO_INITDB_ROOT_USERNAME="root"
-MONGO_INITDB_ROOT_PASSWORD="password!"
+   # MongoDB
+   MONGO_INITDB_ROOT_USERNAME="root"
+   MONGO_INITDB_ROOT_PASSWORD="export2024!"
 
-STI_HOST="http://unimib.it:5042"
+   # STI
+   STI_HOST_UPLOAD_AND_PROCESS="https://selbat.datai.disco.unimib.it/dataset/createWithArray?token=selBat_demo_2023"
+   STI_HOST_DOWNLOAD_ANNOTATIONS="http://vm.chronos.disco.unimib.it/dataset/${datasetName}/table/${table_id}?token=alligator_demo_2023"
 
-PLUGINS_PORT="5001"
+   # Plugins
+   PLUGINS_HOST="http://api:5000"
+   NEXT_PUBLIC_PLUGINS_HOST="http://localhost:5001"
+   PLUGINS_PORT="5001"
+
+   # Mantis
+   MANTIS_OUTSIDEPORT="3000"
+
+   # Mantistablex Variables
+   GPT_KEY="..."
+   GPT_ENDPOINT="..."
 ```
 
 ## Conclusion
