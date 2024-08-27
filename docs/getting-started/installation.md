@@ -4,14 +4,14 @@ sidebar_position: 1
 
 # Installation
 
-This page will guide you through the installation the application using Docker.
+This page will guide you through the installation of the application using Docker.
 
 ## Table of Contents
 
 1. [Prerequisites](#prerequisites)
 2. [Installation](#installdocker)
-    - [Using Docker](#using-docker)
-    - [Using Docker Compose](#using-docker-compose)
+   - [Using Docker](#using-docker)
+   - [Using Docker Compose](#using-docker-compose)
 
 ## Prerequisites
 
@@ -23,59 +23,29 @@ Before you begin, ensure you have the following installed on your system:
 
 ## Installation {#installdocker}
 
-### Using Docker
-
-1. **Pull the Docker Image**
-
-   Open your terminal and pull the MantisTable UI Docker image from the Docker Hub:
-
-   ```sh
-   docker pull mantistable/mantistable-ui:latest
-   ```
-
-2. **Run the Docker Container**
-
-   Start the Docker container using the following command:
-
-   ```sh
-   docker run -d -p 8080:80 --name mantistable-ui mantistable/mantistable-ui:latest
-   ```
-
-   This command will run the MantisTable UI container in detached mode and map port 80 of the container to port 8080 on your host machine.
-
-3. **Access the Application**
-
-   Open your web browser and navigate to `http://localhost:8080` to access the MantisTable UI.
-
 ### Using Docker Compose
 
-1. **Create a `docker-compose.yml` File**
-
-   Create a `docker-compose.yml` file in your project directory with the following content:
-
-   ```yaml
-   version: '3'
-   services:
-     mantistable-ui:
-       image: mantistable/mantistable-ui:latest
-       ports:
-         - "8080:80"
-   ```
+1. **In the terminal, navigate to the project directory**
 
 2. **Start the Docker Compose Services**
 
-   In the terminal, navigate to your project directory and run:
+   Download and install the images, if not present, and run the containers using the following command:
+
+   ```sh
+   docker-compose up
+   ```
+
+   Otherwise if you want to run containers in detached mode run:
 
    ```sh
    docker-compose up -d
    ```
 
-   This command will start the MantisTable UI service in detached mode.
+3. **Access the Application**
+
+   Open your web browser and navigate to `http://localhost:3000` to access the MantisTable UI.
 
    :::warning
    For a correct start of MantisTable UI it is necessary to modify the configuration file as indicated in [Configuration](configuration.md) page.
+   Note that if the configuration file specifies a different port, you have to change it (`3000`) with the correct one.
    :::
-
-3. **Access the Application**
-
-   Open your web browser and navigate to `http://localhost:8080` to access the MantisTable UI.
