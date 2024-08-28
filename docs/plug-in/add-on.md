@@ -12,7 +12,7 @@ Add-on plugins enable MantisTable UI to perform arbitrary tasks on the annotated
 2. **Configuration:** Plugins should allow configuration through environment variables or configuration files.
 3. **Documentation:** Provide clear documentation for each plugin, including usage instructions, dependencies, and configuration options.
 
-### Export Plugin Example
+### Add-on Plugin Example
 
 **Structure:**
 
@@ -73,9 +73,6 @@ rdflib
 pandas
 numpy
 requests
-psycopg2
-pymongo
-python-multipart
 ```
 
 Add-on plugins are very powerful because the definition of the UI to display the data entry form and the plugin's output is left to the plugin developer, who will define the UI using HTML Markup language and inline CSS to style the content.
@@ -95,3 +92,9 @@ Add-on plugins are very powerful because the definition of the UI to display the
    - Export plugins can be accessed through the export menu in the UI.
    - Add-on plugins are typically accessed through semantic processing options.
    - Transformation plugins can be applied through the data transformation tools in the UI.
+
+## Plugin already available
+
+- **`Mantistablex`**
+
+  `Mantistablex` plugin converts structured data into natural language descriptions. Given an input table with annotations specifying the relationships and significance of its data, the tool generates coherent textual summaries or narratives that convey the table's information in readable and contextually appropriate sentences.
