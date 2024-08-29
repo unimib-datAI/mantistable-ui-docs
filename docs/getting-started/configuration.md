@@ -240,3 +240,7 @@ Below is a complete example of a configuration file with all parameters:
 ## Conclusion
 
 The configuration file for MantisTable UI is **crucial** for ensuring proper connections to databases and external services. By correctly setting these parameters, you ensure the smooth operation and integration of MantisTable UI within your environment.
+
+:::warning
+Check if the `/plugins` folder under `/app` directory in plguns API is present, otherwise, create it empty.
+:::
