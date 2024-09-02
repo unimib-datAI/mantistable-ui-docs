@@ -49,9 +49,16 @@ This document describes the configuration file parameters for MantisTable UI. Th
    MONGO_INITDB_ROOT_USERNAME="..."
    MONGO_INITDB_ROOT_PASSWORD="..."
 
-   # STI
-   STI_HOST_UPLOAD_AND_PROCESS="..."
-   STI_HOST_DOWNLOAD_ANNOTATIONS="..."
+   # STI service
+   STI_HOST="..."
+   # UPLOAD
+   STI_HOST_UPLOAD_AND_PROCESS_PATH = "..."
+   STI_HOST_UPLOAD_AND_PROCESS_PARAMS = "..."
+   # DOWNLOAD
+   STI_HOST_DOWNLOAD_PATH_ONE = "..."
+   STI_HOST_DOWNLOAD_PATH_DATASET = "..."
+   STI_HOST_DOWNLOAD_PATH_TWO = "..."
+   STI_HOST_DOWNLOAD_PARAMS = "..."
 
    # Plugins
    PLUGINS_HOST="..."
@@ -130,25 +137,65 @@ This document describes the configuration file parameters for MantisTable UI. Th
 
 ### External STI Services
 
-- **`STI_HOST_UPLOAD_AND_PROCESS`**
+- **`STI_HOST`**
 
-  ```plaintext
-  STI_HOST_UPLOAD_AND_PROCESS="http://sti_upload_and_process:5000"
-  ```
+```plaintext
+STI_HOST="http://sti_process/"
+```
 
-  The address of the STI endpoint available to upload and process a single table. Replace this with the appropriate URL for your setup.
+The base address of the STI endpoint. Replace this with the appropriate URL for your setup.
 
-  - **`STI_HOST_DOWNLOAD_ANNOTATIONS`**
+- **`STI_HOST_UPLOAD_AND_PROCESS_PATH`**
 
-  ```plaintext
-  STI_HOST_DOWNLOAD_ANNOTATIONS="http://sti_download:5000"
-  ```
+```plaintext
+STI_HOST_UPLOAD_AND_PROCESS_PATH="/path_of_your_endpoint"
+```
 
-  The address of the STI endpoint available to download the annotated table. Replace this with the appropriate URL for your setup.
+The path of the STI endpoint available to upload and process a single table, which is concatenated with `STI_HOST` base address. Replace this with the appropriate path for your setup.
 
-  :::warning
-  The external Semantic Table Interpretation service must expose APIs as indicated in [External STI Approach](/docs/sti/external-sti-approach) page.
-  :::
+- **`STI_HOST_UPLOAD_AND_PROCESS_PARAMS`**
+
+```plaintext
+STI_HOST_UPLOAD_AND_PROCESS_PARAMS="?token=...."
+```
+
+This environment variable is needed to add further parameters such as the `token`. Replace this with the appropriate parameters, if needed.
+
+- **`STI_HOST_DOWNLOAD_PATH_ONE`**
+
+```plaintext
+STI_HOST_DOWNLOAD_PATH_ONE="/path_one_download"
+```
+
+The path of the STI endpoint for the download process, which is concatenated with `STI_HOST` base address. Replace this with the path for your setup.
+
+- **`STI_HOST_DOWNLOAD_PATH_DATASET`**
+
+```plaintext
+STI_HOST_DOWNLOAD_PATH_DATASET="/dataset_name"
+```
+
+The path of the STI endpoint for the download process, which is concatenated with `STI_HOST_DOWNLOAD_PATH_ONE` address. Replace this with the name of your dataset, if needed.
+
+- **`STI_HOST_DOWNLOAD_PATH_TWO`**
+
+```plaintext
+STI_HOST_DOWNLOAD_PATH_TWO="/path_two_download"
+```
+
+The path of the STI endpoint for the download process, which is concatenated with `STI_HOST_DOWNLOAD_PATH_DATASET` address. Replace this with the second path for your setup.
+
+- **`STI_HOST_DOWNLOAD_PARAMS`**
+
+```plaintext
+STI_HOST_DOWNLOAD_PARAMS="?token=...."
+```
+
+This environment variable is needed to add further parameters such as the `token`. Replace this with the appropriate parameters, if needed.
+
+:::warning
+The external Semantic Table Interpretation service must expose APIs as indicated in [External STI Approach](/docs/sti/external-sti-approach) page.
+:::
 
 ### Plugins
 
@@ -220,9 +267,16 @@ Below is a complete example of a configuration file with all parameters:
    MONGO_INITDB_ROOT_USERNAME="root"
    MONGO_INITDB_ROOT_PASSWORD="export2024!"
 
-   # STI
-   STI_HOST_UPLOAD_AND_PROCESS="https://selbat.datai.disco.unimib.it/dataset/createWithArray?token=selBat_demo_2023"
-   STI_HOST_DOWNLOAD_ANNOTATIONS="http://vm.chronos.disco.unimib.it/dataset/${datasetName}/table/${table_id}?token=alligator_demo_2023"
+   # STI service
+   STI_HOST="https://selbat.datai.disco.unimib.it/"
+   # UPLOAD
+   STI_HOST_UPLOAD_AND_PROCESS_PATH = "dataset/createWithArray"
+   STI_HOST_UPLOAD_AND_PROCESS_PARAMS = "?token=selBat_demo_2023"
+   # DOWNLOAD
+   STI_HOST_DOWNLOAD_PATH_ONE = "dataset/"
+   STI_HOST_DOWNLOAD_PATH_DATASET = "mantisTables/"
+   STI_HOST_DOWNLOAD_PATH_TWO = "table/"
+   STI_HOST_DOWNLOAD_PARAMS = "?token=selBat_demo_2023"
 
    # Plugins
    PLUGINS_HOST="http://api:5000"
