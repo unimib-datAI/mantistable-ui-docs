@@ -88,3 +88,11 @@ requests
    - Transformation plugins can be applied through the data transformation tools in the UI.
 
 ## Plugin already available
+
+- **`UPPERCASE`**
+
+  The `uppercase` plugin has been added to have a simple example on how plugins work in MantisTable UI. This plugin works with `STRING` only columns by converting each cell to uppercase.
+
+- **`REVERSE_GEOCODING`**
+
+The `reverse_geocoding` plugin works with `GEOCOODING` columns by converting geocoordinates to complete addresses. It uses [Open Street Map API](https://nominatim.openstreetmap.org/ui/reverse.html) to obtain the corresponding address of the geocoordinates.
