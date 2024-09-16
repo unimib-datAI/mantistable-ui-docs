@@ -91,7 +91,7 @@ This document describes the configuration file parameters for MantisTable UI. Th
   POSTGRES_HOST="localhost"
   ```
 
-  The hostname or IP address of the PostgreSQL server. The service is available also inside the Docker Network, so it's possible to specify `postgres`, which is the name of the service.
+  The hostname or IP address of the PostgreSQL server. The service is available also inside the Docker Network, so it is possible to specify `postgres`, which is the name of the service.
 
 - **`POSTGRES_PORT`**
 
@@ -205,7 +205,7 @@ The external Semantic Table Interpretation service must expose APIs as indicated
   PLUGINS_HOST="http://api:5000"
   ```
 
-  The address of the plugin service. The address specified here is internal in the docker network, such as `http://api:5000`, which specify the container name.
+  The address of the plugin service. The address specified here, such as `http://api:5000`, is external to the docker network because it is used in the frontend module.
 
 - **`NEXT_PUBLIC_PLUGINS_HOST`**
 
@@ -213,7 +213,7 @@ The external Semantic Table Interpretation service must expose APIs as indicated
   NEXT_PUBLIC_PLUGINS_HOST="http://localhost:5001"
   ```
 
-  The address of the plugin service. The address specified here is external to the docker network, such as `http://localhost:5001`, because it is used in the frontend module.
+  The address of the plugin service. The address specified here is used inside the docker network, such as `http://localhost:5001`, because it is used in the frontend module.
 
 - **`PLUGINS_PORT`**
 
@@ -293,7 +293,7 @@ Below is a complete example of a configuration file with all parameters:
 
 ## Conclusion
 
-The configuration file for MantisTable UI is **crucial** for ensuring proper connections to databases and external services. By correctly setting these parameters, you ensure the smooth operation and integration of MantisTable UI within your environment.
+The configuration file for MantisTable UI is **crucial** for ensuring proper connections to databases and external services. By correctly setting these parameters, you are ensuring smooth operation and integration of MantisTable UI within your environment.
 
 :::warning
 Check if the `/plugins` folder under `/app` directory in plguns API is present, otherwise, create it empty.
