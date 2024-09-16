@@ -29,13 +29,13 @@ Before you begin, ensure you have the following installed on your system:
 
 2. **Start the Docker Compose Services**
 
-   Download and install the images, if not present, and run the containers using the following command:
+   If not already done, download and install the images. Then, run the containers using the following command:
 
    ```sh
    docker-compose up
    ```
 
-   Otherwise if you want to run containers in detached mode run:
+   Otherwise, if you want to run containers in detached mode, use the following command:
 
    ```sh
    docker-compose up -d
@@ -46,6 +46,6 @@ Before you begin, ensure you have the following installed on your system:
    Open your web browser and navigate to `http://localhost:3000` to access the MantisTable UI.
 
    :::warning
-   For a correct start of MantisTable UI it is necessary to modify the configuration file as indicated in [Configuration](configuration.md) page.
+   For a correct start of MantisTable UI it is necessary to modify the configuration file as indicated in the [Configuration](configuration.md) page.
    Note that if the configuration file specifies a different port, you have to change it (`3000`) with the correct one.
    :::
