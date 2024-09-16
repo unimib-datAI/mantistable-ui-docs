@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Add-on
 
-Add-on plugins enable MantisTable UI to perform arbitrary tasks on the annotated table. An example of `add-on` plugin is the lexicalization of the annotated table (`mantistablex`).
+Add-on plugins enable MantisTable UI to perform arbitrary tasks on the annotated table. An example of add-on plugin is (`mantistablex`), which performs the lexicalization of an annotated table.
 
 ### General Guidelines
 
@@ -57,7 +57,7 @@ output_file_path = f"{os.path.dirname(os.path.realpath(__file__))}/output.html"
 }
 ```
 
-The entry file is specified by the `entry_file` field in the `config.json` file and it represents the entry point of the plugin, because it is the file that is executed to apply the plugin. Once the plugin is selected, the annotated table (defined in the output of the STI sytem ~ [External STI Approach](/docs/sti/external-sti-approach)) is injected in the `input.json` file. In this case, there is also the possibility to define an html form to enable the user to send input data to the add-on plugin for its execution. To add input data, it's important to define the form in the `input.html` file using a `<div>` as root element. Then, the `entry_file` is applied using the `subprocess` module in python and, finally, the output is read in the file defined by the `config.json` using the `output` field (usually defined as `output.html`) in the root folder. For this reason it is very important to use the following structure to identify the correct file path in the plugin:
+The entry file is specified by the `entry_file` field in the `config.json` file and it represents the entry point of the plugin, as it is the file that is executed to apply the plugin. Once the plugin is selected, the annotated table (defined in the output of the STI sytem ~ [External STI Approach](/docs/sti/external-sti-approach)) is injected in the `input.json` file. In this case, there is also the possibility to define an html form to enable the user to send input data to the add-on plugin for its execution. To add input data, it is important to define the form in the `input.html` file using a `<div>` as root element. Then, the `entry_file` is applied using the `subprocess` module in python and, finally, the output is read in the file defined by the `config.json` using the `output` field (usually defined as `output.html`) in the root folder. For this reason, it is crucial to use the following structure to identify the correct file path in the plugin:
 
 ```python
 table_input_path = f"{os.path.dirname(os.path.realpath(__file__))}/input.json" # input table
@@ -65,7 +65,7 @@ input_data_path = f"{os.path.dirname(os.path.realpath(__file__))}/inputData.json
 output_file_path = f"{os.path.dirname(os.path.realpath(__file__))}/output.html" # output html
 ```
 
-The plugin is executed on an isolated environment, so you can't install your own libraries but some are already installed:
+The plugin is executed in an isolated environment. Therefore, you can't install you own libraries, but the following ones are already installed:
 
 ```
 tqdm
@@ -75,7 +75,7 @@ numpy
 requests
 ```
 
-Add-on plugins are very powerful because the definition of the UI to display the data entry form and the plugin's output is left to the plugin developer, who will define the UI using HTML Markup language and inline CSS to style the content.
+Add-on plugins are very powerful because they let the plugin developer define the UI to be used to display the data entry form and the plugin's output, by using HTML Markup Language and inline CSS to style the content.
 
 ## Using Plugins in MantisTable UI
 
@@ -93,7 +93,7 @@ Add-on plugins are very powerful because the definition of the UI to display the
    - Add-on plugins are typically accessed through semantic processing options.
    - Transformation plugins can be applied through the data transformation tools in the UI.
 
-## Plugin already available
+## Already available plugins
 
 - **`Mantistablex`**
 

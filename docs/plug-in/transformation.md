@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Transformation
 
-Transformation plugins allow you to modify table data by applying `Transformations` to the data. Each plugin is applied to individual columns and allows you to modify the column while leaving the rest of the table unchanged, or add a new column based on an existing one by applying the selected plugin
+Transformation plugins allow to modify table data by applying `Transformations` to the data. Each plugin is applied to individual columns and enables the user to modify a column while leaving the rest of the table unchanged. Alternatively, it enables to add a new column based on an existing one.
 
 ### General Guidelines
 
@@ -54,7 +54,7 @@ with open(f"{os.path.dirname(os.path.realpath(__file__))}/output/transform.json"
 }
 ```
 
-The entry file is specified by the `entry_file` field in the `config.json` file and it represents the entry point of the plugin, because it is the file that is executed to apply the plugin. Once the plugin is selected, the annotated table (defined in the output of the STI sytem ~ [External STI Approach](/docs/sti/external-sti-approach)) is injected in the `input.json` file. Then, the `entry_file` is applied using the `subprocess` module in python and, finally, the output is read in the file defined by the `config.json` using the `output` field (usually defined as `output.html`) in the root folder. For this reason it is very important to use the following structure to identify the correct file path in the plugin:
+The entry file is specified by the `entry_file` field in the `config.json` file and it represents the entry point of the plugin, as it is the file that is executed to apply the plugin. Once the plugin is selected, the annotated table (defined in the output of the STI sytem ~ [External STI Approach](/docs/sti/external-sti-approach)) is injected in the `input.json` file. Then, the `entry_file` is applied using the `subprocess` module in python and, finally, the output is read in the file defined by the `config.json` using the `output` field (usually defined as `output.html`) in the root folder. For this reason it is very important to use the following structure to identify the correct file path in the plugin:
 
 ```python
 table_input_path = f"{os.path.dirname(os.path.realpath(__file__))}/input.json" # input table
@@ -91,7 +91,7 @@ requests
 
 - **`UPPERCASE`**
 
-  The `uppercase` plugin has been added to have a simple example on how plugins work in MantisTable UI. This plugin works with `STRING` only columns by converting each cell to uppercase.
+  The `uppercase` plugin has been added to have a simple example on how plugins work in MantisTable UI. This plugin works with `STRING` only columns and converts each cell's text to uppercase text.
 
 - **`REVERSE_GEOCODING`**
 

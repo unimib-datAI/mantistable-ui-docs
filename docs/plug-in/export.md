@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Export Plugins
 
-Export plugins enable MantisTable UI to export data and annotation in user-defined formats.
+Export plugins enable MantisTable UI to export data and annotations in user-defined formats.
 
 ### General Guidelines
 
@@ -44,18 +44,18 @@ export_file_path = f"{os.path.dirname(os.path.realpath(__file__))}/output/kg.jso
   "output": "kg.json",
   "entry_file": "export.py",
   "name": "json",
-  "description": "The 'json' Export Plugin allows users to export annotated tables from Wikidata into JSON triples. This plugin processes tables annotated with Wikidata properties and values, converting them into a structured JSON format that represents each cell's data as subject-predicate-object triples. It simplifies data extraction and integration for developers and researchers working with linked data and semantic web applications"
+  "description": "The 'json' Export Plugin allows users to export annotated tables from Wikidata into JSON triples. This plugin processes tables annotated with Wikidata properties and values, converting them into a structured JSON format that represents each cell's data as <subject-predicate-object> triples. It simplifies data extraction and integration for developers and researchers working with linked data and semantic web applications"
 }
 ```
 
-The entry file is specified by the `entry_file` field in the `config.json` file and it represents the entry point of the plugin, because it is the file that is executed to apply the plugin. Once the plugin is selected, the annotated table (defined in the output of the STI sytem ~ [External STI Approach](/docs/sti/external-sti-approach)) is injected in the `input.json` file. Then, the `entry_file` is applied using the `subprocess` module in python and, finally, the output is read in the file defined by the `config.json` using the `output` field in the `output` directory. For this reason it is very important to use the following structure to identify the correct file path in the plugin:
+The entry file is specified by the `entry_file` field in the `config.json` file and it represents the entry point of the plugin, as it is the file that is executed to apply the plugin. Once the plugin is selected, the annotated table (defined in the output of the STI sytem ~ [External STI Approach](/docs/sti/external-sti-approach)) is injected in the `input.json` file. Then, the `entry_file` is applied using the `subprocess` module in python and, finally, the output is read in the file defined by the `config.json` using the `output` field in the `output` directory. For this reason, it is very important to use the following structure to identify the correct file path in the plugin:
 
 ```python
 file_path = f"{os.path.dirname(os.path.realpath(__file__))}/input.json" # input
 export_file_path = f"{os.path.dirname(os.path.realpath(__file__))}/output/kg.json" # output
 ```
 
-The plugin is executed on an isolated environment, so you can't install your own libraries but some are already installed:
+The plugin is executed in an isolated environment. Therefore, you can't install you own libraries, but the following ones are already installed:
 
 ```
 tqdm
@@ -85,7 +85,7 @@ requests
 
 - **`TTL`**
 
-  The `Turtle` (ttl) plugin facilitates the creation of export files from annotated tables in Wikidata. This tool converts the annotated data into Turtle triples, a popular format for representing RDF (Resource Description Framework) data. Users can effortlessly generate these export files to utilize in various semantic web applications, ensuring a smooth and structured data interchange.
+  The `Turtle` (ttl) plugin facilitates the creation of export files from annotated tables in Wikidata. This tool converts the annotated data into Turtle triples, a popular format for representing RDF (Resource Description Framework) data. Users can effortlessly generate these export files to be utilized in various semantic web applications, ensuring a smooth and structured data interchange.
 
 - **`XML`**
 
@@ -93,7 +93,7 @@ requests
 
 - **`JSON`**
 
-  The `JSON` Export Plugin allows users to export annotated tables from Wikidata into JSON triples. This plugin processes tables annotated with Wikidata properties and values, converting them into a structured JSON format that represents each cell's data as subject-predicate-object triples. It simplifies data extraction and integration for developers and researchers working with linked data and semantic web applications.
+  The `JSON` Export Plugin allows users to export annotated tables from Wikidata into JSON triples. This plugin processes tables annotated with Wikidata properties and values, converting them into a structured JSON format that represents each cell's data as `<subject-predicate-object>` triples. It simplifies data extraction and integration for developers and researchers working with linked data and semantic web applications.
 
 - **`N3`**
 
@@ -101,8 +101,8 @@ requests
 
 - **`NTriples`**
 
-  This plugin enables users to export annotated tables from Wikidata into `NTriples` format. It efficiently converts the structured data and metadata from Wikidata entries into a series of RDF triples, adhering to the NTriples specification. Ideal for researchers and developers, it facilitates seamless data integration and interoperability within semantic web applications. Simply annotate your table in Wikidata, and use the plugin to generate an export file containing the corresponding NTriples triples.
+  This plugin enables users to export annotated tables from Wikidata into `NTriples` format. It efficiently converts the structured data and metadata from Wikidata entries into a series of RDF triples, adhering to the NTriples specification. Ideal for researchers and developers, it facilitates data integration and interoperability within semantic web applications. You can simply annotate your table in Wikidata, and use the plugin to generate an export file containing the corresponding NTriples triples.
 
 - **`TRIG`**
 
-  The `TRIG` plugin facilitates the creation of export files from annotated tables in Wikidata. This tool converts the annotated data into Turtle triples, a popular format for representing RDF (Resource Description Framework) data. Users can effortlessly generate these export files to utilize in various semantic web applications, ensuring a smooth and structured data interchange.
+  The `TRIG` plugin facilitates the creation of export files from annotated tables in Wikidata. This tool converts the annotated data into Turtle triples, a popular format for representing RDF (Resource Description Framework) data. Users can effortlessly generate these export files to be utilized in various semantic web applications, ensuring a smooth and structured data interchange.
