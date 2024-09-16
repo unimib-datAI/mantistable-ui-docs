@@ -73,6 +73,12 @@ export default function Home(): JSX.Element {
                     Learn more <ArrowRight className="ml-2 h-5 w-5" />{" "}
                   </a>
                   <a
+                    href="https://forms.gle/oQ24aYpVZ5B8enXj8"
+                    className="text-center inline-flex items-center border-none dark:bg-primaryGreen dark:text-lightBackground  hover:text-dgBackground text-dgBackground font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-secondaryGreen font-semibold"
+                  >
+                    Feedback and Features request <ExternalLink className="ml-2 h-5 w-5" />{" "}
+                  </a>
+                  <a
                     href="https://mantistable.datai.disco.unimib.it/"
                     className="text-center inline-flex items-center border-2 border-solid dark:border-primaryGreen border-secondaryGreen hover:text-dgBackground dark:text-lightBackground text-dgBackground font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 font-semibold"
                   >
