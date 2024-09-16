@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Configuration
 
-This document describes the configuration file parameters for MantisTable UI. The configuration file is essential for connecting to databases, setting up external services, and customizing application behavior.
+This document describes the configuration file parameters for MantisTable UI. The configuration file is essential for connecting to databases, setting up external services, and customising application behavior.
 
 ## How to Use the Configuration File
 

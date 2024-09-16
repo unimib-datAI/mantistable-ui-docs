@@ -8,7 +8,7 @@ MantisTable UI intagrate a default STI approach: **s-elBat**. If you want to int
 
 ## s-elBat
 
-**s-elBat**  (the name comes from taBle-s and Semantic Entity Linking to BAtch Table) is a supervised and unsupervised STI approach.It incorporates various strategies to address all STI challenges.
+**s-elBat** (the name comes from taBle-s and Semantic Entity Linking to BAtch Table) is a supervised and unsupervised STI approach.it incorporates various strategies to address all STI challenges.
 
 <img src="/mantistable-ui-docs/img/selbat.png" height="100"></img>
 
