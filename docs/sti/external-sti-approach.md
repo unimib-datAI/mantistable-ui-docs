@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # External STI Approach
 
-MantisTable UI can interacts with an API to integrate an external STI approach. This document describes the API endpoints, their methods, and how to configure MantisTable UI to use these endpoints.
+MantisTable UI interacts with an API to integrate an external STI approach. This document describes the API endpoints, their methods, and how to configure MantisTable UI to use these endpoints.
 
 :::warning
 In order to use your own STI approach you need to implement an API by following the instructions on this page.
@@ -43,7 +43,7 @@ To modify the configuration file, refer to the page [Configuration](/docs/gettin
 
 **HTTP Method:** `POST`
 
-**Description:** This endpoint must accpets a table in JSON format and performs semantic interpretation on it.
+**Description:** This endpoint accepts a table in JSON format only and performs semantic interpretation on it.
 
 **Request Headers:**
 
@@ -152,7 +152,7 @@ curl -X 'POST' \
 
 **HTTP Method:** `GET`
 
-**Description:** This endpoint must returns the table along with its semantic annotations.
+**Description:** This endpoint must return the table along with its semantic annotations.
 
 **Request Headers:**
 
@@ -160,8 +160,8 @@ curl -X 'POST' \
 
 **Request Parameters:**
 
-- `datasetName`: the name of the dataset to which the table belongs.
-- `table_id`: The unique identifier of the table.
+- `datasetName`: the name of the dataset that the table belongs to.
+- `table_id`: the unique identifier of the table.
 
 **Response:**
 
@@ -1497,4 +1497,4 @@ curl -X 'GET' \
 
 ## Conclusion
 
-The API provides essential functionalities for semantic table interpretation and retrieval of annotations, which are crucial for the MantisTable UI. Proper configuration of the API endpoints ensures seamless interaction between the MantisTable UI and the external API.
+The API provides essential functionalities for semantic table interpretation and retrieval of annotations, which are crucial for MantisTable UI. Proper configuration of the API endpoints ensures seamless interaction between MantisTable UI and the external API.
