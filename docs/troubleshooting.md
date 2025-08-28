@@ -1,6 +1,6 @@
 # Troubleshooting
 
-This section lists common issues that may occur when using **MantistableX** and provides possible solutions.
+This section lists common issues that may occur when using **MantisTableUI** and provides possible solutions.
 
 ---
 
