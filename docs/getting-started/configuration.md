@@ -235,6 +235,8 @@ The external Semantic Table Interpretation service must expose APIs as indicated
 
 ### Mantistablex
 
+The following keys are used by the MantistableX plugin, which relies on the GPT API for text generation, specifically for the lexicalization of an annotated table, i.e. transforming structured annotations into natural language descriptions. The table input and its annotations are sent to GPT, which generates a natural language lexicalization of the input.
+
 - **`GPT_KEY`**
 
   ```plaintext
