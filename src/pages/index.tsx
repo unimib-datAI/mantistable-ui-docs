@@ -65,22 +65,22 @@ export default function Home(): JSX.Element {
                   Effortless data interaction and simple table navigation with a
                   Graphic User Interface for Semantic Table Interpretion{" "}
                 </p>
-                <div className="flex flex-row">
+                <div className="flex flex-row flex-wrap gap-2">
                   <a
                     href="/mantistable-ui-docs/docs/introduction"
-                    className="text-center inline-flex items-center border-none dark:bg-primaryGreen dark:text-lightBackground  hover:text-dgBackground text-dgBackground font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-secondaryGreen font-semibold"
+                    className="text-center inline-flex items-center border-none dark:bg-primaryGreen dark:text-lightBackground  hover:text-dgBackground text-dgBackground font-sm rounded-lg text-sm px-5 py-2.5 bg-secondaryGreen font-semibold whitespace-nowrap min-w-[140px] justify-center"
                   >
                     Learn more <ArrowRight className="ml-2 h-5 w-5" />{" "}
                   </a>
                   <a
                     href="https://forms.gle/oQ24aYpVZ5B8enXj8"
-                    className="text-center inline-flex items-center border-none dark:bg-primaryGreen dark:text-lightBackground  hover:text-dgBackground text-dgBackground font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-secondaryGreen font-semibold"
+                    className="text-center inline-flex items-center border-none dark:bg-primaryGreen dark:text-lightBackground  hover:text-dgBackground text-dgBackground font-sm rounded-lg text-sm px-5 py-2.5 bg-secondaryGreen font-semibold whitespace-nowrap min-w-[140px] justify-center"
                   >
-                    Feedback and Features request <ExternalLink className="ml-2 h-5 w-5" />{" "}
+                    Feedback <ExternalLink className="ml-2 h-5 w-5" />{" "}
                   </a>
                   <a
                     href="https://mantistable.datai.disco.unimib.it/"
-                    className="text-center inline-flex items-center border-2 border-solid dark:border-primaryGreen border-secondaryGreen hover:text-dgBackground dark:text-lightBackground text-dgBackground font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 font-semibold"
+                    className="text-center inline-flex items-center border-2 border-solid dark:border-primaryGreen border-secondaryGreen hover:text-dgBackground dark:text-lightBackground text-dgBackground font-sm rounded-lg text-sm px-5 py-2.5 font-semibold whitespace-nowrap min-w-[140px] justify-center"
                   >
                     Try it out <ExternalLink className="ml-2 h-5 w-5" />{" "}
                   </a>

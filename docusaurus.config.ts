@@ -16,7 +16,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'DatAI Lab', // Usually your GitHub org/user name.
+  organizationName: 'DatAI LAB', // Usually your GitHub org/user name.
   projectName: 'MantisTable UI', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -86,7 +86,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} Dat<sup>*</sup>AI lab lab. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} DatAI LAB. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
