@@ -1,9 +1,10 @@
 ---
 id: sample
-title: Sample
+title: Samples
+sidebar_position: 5
 ---
 
-# Sample Input and Output
+# Samples Input and Output
 
 This section provides example files showing **how to structure input tables** and the corresponding **generated outputs** in different formats.  
 The documentation includes examples for two CSV tables: **mountains** and **movies**.  
