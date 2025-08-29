@@ -78,7 +78,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/UNIMIBInside/mantistable-ui',
+          href: 'https://github.com/unimib-datAI/mantistable-ui',
           label: 'GitHub',
           position: 'right',
         },

@@ -1,0 +1,75 @@
+---
+title: Architecture & Technology
+sidebar_position: 30
+---
+
+# Architecture & Technology
+
+This page provides an overview of MantisTable UI's high-level architecture and technology stack.
+
+![MantisTable UI Architecture](/img/mantis_architecture.png)
+
+*High-level architecture of MantisTable UI showing the main components and their interactions.*
+
+## Frontend
+
+The frontend layer is built with **Next.js** and **TypeScript**, providing the web-based user interface for MantisTable UI. It handles:
+
+- **User Interface**: Interactive components for table management and STI operations
+- **Routing**: Next.js-based navigation between different sections of the application
+- **Theming**: Consistent visual design using Tailwind CSS
+- **Plugin Integration**: Interface for interacting with the plugin system
+
+The frontend communicates with the backend through a well-defined API interface, enabling seamless data flow and user interactions.
+
+## Backend for plugins / APIs
+
+The backend serves as the core orchestration layer, built with **Python** and managing:
+
+- **Plugin Invocation**: Handles requests to execute export, add-on, and transformation plugins
+- **Service Isolation**: Ensures plugins run in isolated environments for security and stability
+- **API Management**: Provides RESTful endpoints for frontend communication
+- **STI Service Integration**: Connects to external STI services (LamAPI, s-elBat) for semantic table interpretation
+
+The backend utilises containerisation to ensure consistent deployment and execution environments across different platforms.
+
+## Data persistence
+
+MantisTable UI employs a multi-database architecture to handle different types of data:
+
+### PostgreSQL
+- **Purpose**: Primary database for plugin-related data
+- **Storage**: Configuration settings, user preferences, and plugin metadata
+- **Integration**: Managed through Drizzle ORM for type-safe database operations
+- **Schema Management**: Database schema is defined and versioned using Drizzle configuration
+
+### MongoDB
+- **Plugin Database**: Stores plugin-specific data and configurations
+- **STI Data**: External MongoDB instances store semantic interpretation results from LamAPI and s-elBat services
+- **Flexibility**: NoSQL structure allows for dynamic schema changes as STI requirements evolve
+
+## Configuration & environment variables
+
+MantisTable UI uses environment variables and configuration files to manage application settings. For detailed installation and configuration instructions, see the [Installation Guide](getting-started/installation.md).
+
+Key configuration areas include:
+- Database connection strings
+- STI service endpoints
+- Plugin execution parameters
+- Security settings
+
+## Deployment options
+
+### Development Environment
+- **Local Setup**: Direct installation for development and testing
+- **Docker Compose**: Containerised development environment using `docker-compose-dev.yml`
+- **Hot Reloading**: Real-time updates during development with Next.js
+- **Environment Configuration**: Development-specific settings via `.env.example.dev`
+
+### Production Environment
+- **Docker Deployment**: Containerised production deployment using `docker-compose.yml`
+- **Environment Configuration**: Production settings via `.env.example.prod`
+- **Scalability**: Horizontal scaling capabilities for high-traffic scenarios
+- **Monitoring**: Built-in logging and monitoring for production environments
+
+The containerised approach ensures consistent behaviour across different deployment environments and simplifies the deployment process.

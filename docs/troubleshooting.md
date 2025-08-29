@@ -14,7 +14,7 @@ This section lists common issues that may occur when using **MantisTableUI** and
 
 **Solution:**
 
-- Check that your GPT API key is correctly set in the environment variables (`OPENAI_API_KEY`).
+- Check that your GPT API key is correctly set in the environment variables (`GPT_KEY`).
 - Ensure that your internet connection is stable.
 - Verify that the API endpoint is reachable and not blocked by a firewall or proxy.
 

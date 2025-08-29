@@ -1,0 +1,73 @@
+---
+title: Glossary
+sidebar_position: 20
+---
+
+# Glossary
+
+This glossary collects the main concepts and acronyms used in **MantisTable UI** and in Semantic Table Interpretation (STI).
+
+---
+
+### CEA (Cell Entity Annotation)
+The task of linking individual **table cells** to the most appropriate entity in a knowledge graph.  
+*Example*: the cell *"Mont Blanc"* in a mountain column is linked to the entity `Mount_Blanc` in the knowledge graph.
+
+---
+
+### CPA (Column Property Annotation)
+The task of identifying the **semantic relations** between two columns in a table.  
+*Example*: linking the column *"Name"* and *"Height"* through the property `dbo:elevation`, or *"Name"* and *"Coordinates"* through `georss:point`.
+
+---
+
+### CTA (Column Type Annotation)
+The task of assigning the most suitable **class or type** from a knowledge graph to a column.  
+*Example*: the column *"Name"* is annotated with the type `Mountain`, or *"Range"* with `Mountain_Range`.
+
+---
+
+### Datatype annotation
+The identification of a column as containing **literal values** such as numbers, strings or dates, without linking to an external entity.  
+*Example*: a column *"Height"* annotated as `xsd:integer`, or *"Coordinates"* as `xsd:string`.
+
+---
+
+### Entity linking
+The process of mapping a textual mention (e.g. a string in a table cell) to an unambiguous entity in a knowledge graph.  
+This is the underlying technique for **CEA**.
+
+---
+
+### Knowledge Graph (KG)
+A structured representation of entities, classes and relations, usually expressed as RDF triples.  
+It provides the background knowledge for **STI** tasks.
+
+---
+
+### Literal (LIT) column
+A column whose values are **literals**, i.e. not linked to external entities.  
+*Example*:  
+- *"Height"* → values such as `4808`, `3275` are treated as integers.  
+- *"Coordinates"* → values such as `45° 49′ 57″ N, 06° 51′ 54″ E` are treated as strings.
+
+---
+
+### Named Entity (NE) column
+A column whose values are **named entities**, i.e. references to real-world objects that can be linked to a knowledge graph.  
+*Example*:  
+- *"Name"* → values such as *Mont Blanc*, *Cervino* are linked to entities `Mount_Blanc`, `Mount_Cervino`.  
+- *"Range"* → values such as *M. Blanc massif*, *Pennine Alps* are linked to entities `Mount_Blanc_Massif`, `Pennine_Alps`.
+
+---
+
+### STI (Semantic Table Interpretation)
+The process of enriching tabular data with semantic annotations derived from knowledge graphs.  
+It typically includes **CEA**, **CTA**, and **CPA** tasks.
+
+---
+
+## Why the NE/LIT distinction matters
+Distinguishing between **Named Entity (NE)** and **Literal (LIT)** columns is crucial for semantic table interpretation.  
+It determines whether cells should be **linked to knowledge graph entities** (NE) or treated as **raw values** (LIT) with an appropriate datatype.  
+This distinction affects the accuracy of **CEA**, the choice of relations in **CPA**, and the utility of the resulting annotations in downstream applications.
